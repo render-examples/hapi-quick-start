@@ -2,7 +2,7 @@
 
 This is the [hapi](https://hapijs.com) [Getting Started](https://hapijs.com/tutorials) tutorial on [Render](https://render.com).
 
-The app in this repo is deployed at [https://hapijs.app.render.com](https://hapijs.app.render.com).
+The app in this repo is deployed at [https://hapijs.onrender.com](https://hapijs.onrender.com).
 
 ## Deployment
 1. Create a new Render project using your version of this repo.
