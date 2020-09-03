@@ -20,8 +20,8 @@
   },
   "homepage": "https://github.com/render-examples/hapi-quickstart#readme",
   "dependencies": {
-    "hapi": "^17.8.1",
-    "hapi-pino": "^5.2.0",
-    "inert": "^5.1.2"
+    "@hapi/hapi": "^20.0.0",
+    "@hapi/inert": "^6.0.2",
+    "hapi-pino": "^8.2.0"
   }
 }
