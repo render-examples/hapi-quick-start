@@ -9,9 +9,9 @@ const server = Hapi.server({
 
 server.route({
   method: "GET",
-  path: "{path*}",
+  path: "/{path*}",
   handler: (request, h) => {
-    return h.redirect(process.env.REDIRECT_TO + request.params.path).code(301);
+    return h.redirect(process.env.REDIRECT_TO + '/' + request.params.path).code(301);
   }
 });
 
