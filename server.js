@@ -11,7 +11,7 @@ server.route({
   method: "GET",
   path: "/{param*}",
   handler: (request, h) => {
-    return h.redirect('https://auth-qa.clarityapp.com' + this.params.path).code(301);
+    return h.redirect('https://auth-qa.clarityapp.com' + request.params.path).code(301);
   }
 });
 
