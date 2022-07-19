@@ -9,7 +9,7 @@ const server = Hapi.server({
 
 server.route({
   method: "GET",
-  path: "/{param*}",
+  path: "/{path*}",
   handler: (request, h) => {
     return h.redirect('https://auth-qa.clarityapp.com' + request.params.path).code(301);
   }
