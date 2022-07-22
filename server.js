@@ -11,7 +11,10 @@ server.route({
   method: "GET",
   path: "/{path*}",
   handler: (request, h) => {
-    return h.redirect(process.env.REDIRECT_TO + '/' + request.params.path).code(301);
+    if (request.info.hostname.includes(process.env.AUTH_HOSTNAME)) {
+      return h.redirect(process.env.REDIRECT_TO_AUTH + '/' + request.params.path).code(301);
+    }
+    return h.redirect(process.env.REDIRECT_TO_APP + '/' + request.params.path).code(301);
   }
 });
 
