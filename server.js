@@ -11,10 +11,15 @@ server.route({
   method: "GET",
   path: "/{path*}",
   handler: (request, h) => {
-    if (request.info.hostname.includes(process.env.AUTH_HOSTNAME)) {
-      return h.redirect(process.env.REDIRECT_TO_AUTH + '/' + request.params.path).code(301);
+    let redirect_url = '';
+    if (request.info.hostname === process.env.AUTH_HOSTNAME) {
+      redirect_url = process.env.REDIRECT_TO_AUTH + '/' + request.params.path;
+    } else if (request.info.hostname === process.env.APP_HOSTNAME) {
+      redirect_url = process.env.REDIRECT_TO_APP + '/' + request.params.path;
+    } else {
+      redirect_url = process.env.REDIRECT_TO_APP;
     }
-    return h.redirect(process.env.REDIRECT_TO_APP + '/' + request.params.path).code(301);
+    return h.redirect(redirect_url).code(301);
   }
 });
 
