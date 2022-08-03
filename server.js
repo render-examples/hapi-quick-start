@@ -16,6 +16,8 @@ server.route({
       redirect_url = process.env.REDIRECT_TO_AUTH + '/' + request.params.path;
     } else if (request.info.hostname === process.env.APP_HOSTNAME) {
       redirect_url = process.env.REDIRECT_TO_APP + '/' + request.params.path;
+    } else if (request.info.hostname === process.env.LEGACY_HOSTNAME) {
+      redirect_url = process.env.REDIRECT_TO_SCHOOLS;
     } else {
       redirect_url = process.env.REDIRECT_TO_APP;
     }
